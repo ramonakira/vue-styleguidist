@@ -15,7 +15,7 @@ runs:
           ${{ runner.os }}-
 
     - name: Install Pnpm and run install 
-      uses: pnpm/action-setup@v2.0.1
+      uses: pnpm/action-setup@v2.2.1
       with:
         version: 6
         run_install: true
