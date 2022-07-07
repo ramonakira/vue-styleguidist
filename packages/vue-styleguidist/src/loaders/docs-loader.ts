@@ -9,8 +9,13 @@ export default function (this: loader.LoaderContext, source: string | Buffer, ma
 			null,
 			`export default function (Component) {
         Component.options = Component.options || {}
+<<<<<<< renovate/major-vue-monorepo
 		    Component.options.__docs = ${JSON.stringify(source)}
 	    }`,
+=======
+        Component.options.__docs = ${JSON.stringify(source)}
+      }`,
+>>>>>>> dev
 			String(map)
 		)
 	}
