@@ -9,6 +9,12 @@
     "compile": "rollup -c",
     "compile:watch": "rollup -c --watch"
   },
+  "exports": {
+    ".": {
+      "import": "./lib/vue-inbrowser-compiler-utils.esm.js",
+      "require": "./lib/vue-inbrowser-compiler-utils.cjs.js"
+    }
+  },
   "keywords": [
     "vue",
     "compile",

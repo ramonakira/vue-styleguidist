@@ -146,7 +146,7 @@
     "pug": "3.0.2",
     "strip-shebang": "1.0.2",
     "vue": "3.2.37",
-    "vue-template-compiler": "2.6.14",
+    "@vue/compiler-sfc": "3.2.27",
     "webpack": "4.46.0"
   },
   "resolutions": {

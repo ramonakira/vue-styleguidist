@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import hash from 'hash-sum'
-import { SFCDescriptor } from 'vue-template-compiler'
+import { SFCDescriptor } from '@vue/compiler-sfc'
 import { isVue3 } from 'vue-inbrowser-compiler-utils'
 import LRUCache from 'lru-cache'
 
@@ -14,12 +14,12 @@ export default function parseVue(source: string): SFCDescriptor {
 		return output
 	}
 
-  const parse = isVue3
-    // eslint-disable-next-line import/no-unresolved
-    ? require('@vue/compiler-sfc').parse
-    : require('vue-template-compiler').parseComponent
+	const parse = isVue3
+		? require('@vue/compiler-sfc').parse
+		: // eslint-disable-next-line import/no-unresolved
+		  require('vue-template-compiler').parseComponent
 	const parsedSFC = parse(source)
-  const descriptor = parsedSFC.descriptor ?? parsedSFC
+	const descriptor = parsedSFC.descriptor ?? parsedSFC
 	cache.set(cacheKey, descriptor)
 	return descriptor
 }
