@@ -1,6 +1,6 @@
-import { VueConstructor } from "vue";
+import { ComponentOptions } from "vue";
 
-const globalComponents: Record<string, VueConstructor>  = {}
+const globalComponents: Record<string, ComponentOptions>  = {}
 
 export function registerGlobalComponents(app: any): any{
   Object.entries(globalComponents)
@@ -10,6 +10,6 @@ export function registerGlobalComponents(app: any): any{
   return app
 }
 
-export function addGlobalComponentToRegistration(name: string, component: VueConstructor) {
+export function addGlobalComponentToRegistration(name: string, component: ComponentOptions) {
   globalComponents[name] = component
 }
